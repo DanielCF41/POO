@@ -51,38 +51,38 @@ public class App {
 //        b.aplicarGolpe();
 //        b.dispararLaser();
 //        System.out.println(b.falas());
-
-        Pessoa[] vetor = new Pessoa[10];
-
-        //Pessoa juca = new Pessoa();
-        vetor[0] = new Pessoa();
-        vetor[0].setNome("Juca da Silva");
-        vetor[0].setCpf("159.147.245-20");
-        vetor[0].setSexo("Masculino");
-        vetor[0].setEmail("juca.silva1998@gmail.com");
-        vetor[0].setTelefone("(11) 99526-2354");
-        vetor[0].setEndereco("Rua das PseudoBananas, 154");
-
-        Pessoa ana = new Pessoa();
-        ana.setNome("Ana");
-        ana.setCpf("222.000.222-00");
-        ana.setSexo("Feminino");
-        ana.setEndereco("Rua Rio Verde");
-        ana.setTelefone("(22) 51515656156");
-        ana.setEmail("ana@example.com");
-
-        vetor[1] = ana;
-
+//
+//        Pessoa[] vetor = new Pessoa[10];
+//
+//        Pessoa juca = new Pessoa();
+//        vetor[0] = new Pessoa();
+//        vetor[0].setNome("Juca da Silva");
+//        vetor[0].setCpf("159.147.245-20");
+//        vetor[0].setSexo("Masculino");
+//        vetor[0].setEmail("juca.silva1998@gmail.com");
+//        vetor[0].setTelefone("(11) 99526-2354");
+//        vetor[0].setEndereco("Rua das PseudoBananas, 154");
+//
+//        Pessoa ana = new Pessoa();
+//        ana.setNome("Ana");
+//        ana.setCpf("222.000.222-00");
+//        ana.setSexo("Feminino");
+//        ana.setEndereco("Rua Rio Verde");
+//        ana.setTelefone("(22) 51515656156");
+//        ana.setEmail("ana@example.com");
+//
+//        vetor[1] = ana;
+//
 //        for (int i = 0; i < vetor.length; i++) {
 //            if(vetor[i] != null) {
 //                System.out.println(vetor[i] + "\n");
 //            }
 //        }
-        for(Pessoa p: vetor){
-            if(p != null) {
-                System.out.println(p);
-            }
-        }
+//        for(Pessoa p: vetor){
+//            if(p != null) {
+//                System.out.println(p);
+//            }
+//        }
 
     }
 
