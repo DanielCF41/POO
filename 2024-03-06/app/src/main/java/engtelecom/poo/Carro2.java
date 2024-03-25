@@ -4,14 +4,29 @@ public class Carro2 {
 
     private int velocidade;
     private final int VELOCIDADE_MAX;
+    public static int contador = 0;
+
+    public static int getContador() {
+        return contador;
+    }
 
     public Carro2(int n, int max){
         this();
         setVelocidade(n);
     }
+    public Carro2(int max){
+        this.VELOCIDADE_MAX = max;
+        velocidade = 0;
+    }
+
     public Carro2(){
         velocidade = 0;
         this.VELOCIDADE_MAX = 200;
+        this.contador++;
+
+    }
+    public static String aceleracao(){
+        return "9,8m/s*s";
     }
 
     public int getVelocidade() {

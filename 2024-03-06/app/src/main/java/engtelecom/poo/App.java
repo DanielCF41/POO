@@ -83,7 +83,10 @@ public class App {
 //                System.out.println(p);
 //            }
 //        }
+        Carro2 fusca = new Carro2(120);
+        fusca.getVelocidade();
 
+        Carro2.aceleracao();
     }
 
 }
