@@ -7,7 +7,7 @@ public class Retangulo {
 
     public Retangulo(int largura, int altura, String codificacao) {
         if (!setCodificacao(codificacao)) {
-            this.codificacao = codificacao;
+            this.codificacao = "ASCII";
         }
         if (!setAltura(altura) || !setLargura(largura)) {
             this.altura = 3;
@@ -25,7 +25,7 @@ public class Retangulo {
         return largura;
     }
 
-    public Boolean setLargura(int largura) {
+    public boolean setLargura(int largura) {
         if (largura > 0) {
             this.largura = largura;
             return true;
@@ -37,7 +37,7 @@ public class Retangulo {
         return altura;
     }
 
-    public Boolean setAltura(int altura) {
+    public boolean setAltura(int altura) {
         if (altura > 0) {
             this.altura = altura;
             return true;
@@ -49,7 +49,7 @@ public class Retangulo {
         return codificacao;
     }
 
-    public Boolean setCodificacao(String codificacao) {
+    public boolean setCodificacao(String codificacao) {
         if (codificacao.equals("ASCII") || codificacao.equals("UTF-8")) {
             this.codificacao = codificacao;
             return true;
