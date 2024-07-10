@@ -39,15 +39,12 @@ public class CarroTest {
     public void testeFrear(){
         Carro c = new Carro();
 
-        assertEquals(0, c.frear(10));
-        assertEquals(0, c.frear(0));
-        assertEquals(0,c.frear(-10));
+        c.acelerar(30);
 
-        c.acelerar(20);
-
-        assertEquals(10, c.frear(10));
+        assertEquals(10, c.frear(20));
         assertEquals(10, c.frear(0));
         assertEquals(10, c.frear(-10));
+        assertEquals(0,c.frear(20));
     }
 
 }
