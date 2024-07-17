@@ -25,4 +25,10 @@ public class TermometroTest {
 
     }
 
+    public void diferencaTemperatura(){
+        Termometro termometro =  new Termometro('C',50, 100,0);
+
+        assertEquals("");
+    }
+
 }

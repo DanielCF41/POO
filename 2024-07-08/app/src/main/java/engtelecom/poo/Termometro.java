@@ -90,55 +90,83 @@ public class Termometro {
         return temperaturaMinima;
     }
 
-    /**
-     * Método que retorna a temperatura atual, a mínima e a máxima na escala escolhida
-     * @param escala
-     * @return
-     */
-    public String retornaTemperatura(char escala){
-        double atual = 0.0;
-        double max = 0.0;
-        double min = 0.0;
-        if(escala != this.escala){
-            switch (escala){
+    public double conversao(char escala, double temperatura) {
+        double tempAux = 0.0;
+
+        if (escala != this.escala) {
+            switch (escala) {
                 case 'C':
                     if (this.escala == 'F') {
-                       atual = (this.temperaturaAtual - 32) * 0.55;
-                       max = (this.temperaturaMaxima - 32) * 0.55;
-                       min = (this.temperaturaMinima - 32) * 0.55;
+                        tempAux = (temperatura - 32) * 0.55;
                     } else if (this.escala == 'K') {
-                        atual = this.temperaturaAtual - 273.15;
-                        max = this.temperaturaMaxima - 273.15;
-                        min = this.temperaturaMinima - 273.15;
+                        tempAux = temperatura - 273.15;
                     }
                     break;
                 case 'F':
-                    if(this.escala == 'C'){
-                        atual = (this.temperaturaAtual * 1.8) + 32;
-                        max = (this.temperaturaMaxima * 1.8) + 32;
-                        min = (this.temperaturaMinima * 1.8) + 32;
-                    } else if (this.escala == 'K'){
-                        atual = (this.temperaturaAtual - 273.15) * 1.8 + 32;
-                        max = (this.temperaturaMaxima - 273.15) * 1.8 + 32;
-                        min = (this.temperaturaMinima - 273.15) * 1.8 + 32;
+                    if (this.escala == 'C') {
+                        tempAux = (temperatura * 1.8) + 32;
+                    } else if (this.escala == 'K') {
+                        tempAux = (temperatura - 273.15) * 1.8 + 32;
                     }
                     break;
                 case 'K':
-                    if(this.escala == 'C'){
-                        atual = this.temperaturaAtual + 273.15;
-                        max = this.temperaturaMaxima + 273.15;
-                        min = this.temperaturaMinima + 273.15;
-                    }else if(this.escala == 'F'){
-                        atual = (this.temperaturaAtual - 32) * 0.55 + 273.15;
-                        max = (this.temperaturaMaxima - 32) * 0.55 + 273.15;
-                        min = (this.temperaturaMinima - 32) * 0.55 + 273.15;
+                    if (this.escala == 'C') {
+                        tempAux = temperatura + 273.15;
+                    } else if (this.escala == 'F') {
+                        tempAux = (temperatura - 32) * 0.55 + 273.15;
                     }
             }
-        } else {
-            return "A = " + this.temperaturaAtual + " °" + this.escala + "\nMÍN = " + this.temperaturaMinima + " °" + this.escala + "\nMÁX = " + this.temperaturaMaxima + " °" + this.escala;
         }
-        return "A = " + atual + " °" + escala + "\nMÍN = " + min + " °" + escala + "\nMÁX = " + max + " °" + escala;
-    }
+
+        /**
+         * Método que retorna a temperatura atual, a mínima e a máxima na escala escolhida
+         * @param escala
+         * @return
+         */
+        public String retornaTemperatura ( char escala){
+            double atual = 0.0;
+            double max = 0.0;
+            double min = 0.0;
+            if (escala != this.escala) {
+                switch (escala) {
+                    case 'C':
+                        if (this.escala == 'F') {
+                            atual = (this.temperaturaAtual - 32) * 0.55;
+                            max = (this.temperaturaMaxima - 32) * 0.55;
+                            min = (this.temperaturaMinima - 32) * 0.55;
+                        } else if (this.escala == 'K') {
+                            atual = this.temperaturaAtual - 273.15;
+                            max = this.temperaturaMaxima - 273.15;
+                            min = this.temperaturaMinima - 273.15;
+                        }
+                        break;
+                    case 'F':
+                        if (this.escala == 'C') {
+                            atual = (this.temperaturaAtual * 1.8) + 32;
+                            max = (this.temperaturaMaxima * 1.8) + 32;
+                            min = (this.temperaturaMinima * 1.8) + 32;
+                        } else if (this.escala == 'K') {
+                            atual = (this.temperaturaAtual - 273.15) * 1.8 + 32;
+                            max = (this.temperaturaMaxima - 273.15) * 1.8 + 32;
+                            min = (this.temperaturaMinima - 273.15) * 1.8 + 32;
+                        }
+                        break;
+                    case 'K':
+                        if (this.escala == 'C') {
+                            atual = this.temperaturaAtual + 273.15;
+                            max = this.temperaturaMaxima + 273.15;
+                            min = this.temperaturaMinima + 273.15;
+                        } else if (this.escala == 'F') {
+                            atual = (this.temperaturaAtual - 32) * 0.55 + 273.15;
+                            max = (this.temperaturaMaxima - 32) * 0.55 + 273.15;
+                            min = (this.temperaturaMinima - 32) * 0.55 + 273.15;
+                        }
+                }
+            } else {
+                return "A = " + this.temperaturaAtual + " °" + this.escala + "\nMÍN = " + this.temperaturaMinima + " °" + this.escala + "\nMÁX = " + this.temperaturaMaxima + " °" + this.escala;
+            }
+            return "A = " + atual + " °" + escala + "\nMÍN = " + min + " °" + escala + "\nMÁX = " + max + " °" + escala;
+        }
 
     /**
      * Método que recebe um objeto da classe termômetro e a sigla da escala termométrica (C, F ou K) e retorna a diferença de temperatura atual na escala informada
