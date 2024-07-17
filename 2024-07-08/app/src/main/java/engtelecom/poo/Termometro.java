@@ -96,11 +96,48 @@ public class Termometro {
      * @return
      */
     public String retornaTemperatura(char escala){
+        double atual = 0.0;
+        double max = 0.0;
+        double min = 0.0;
         if(escala != this.escala){
             switch (escala){
+                case 'C':
+                    if (this.escala == 'F') {
+                       atual = (this.temperaturaAtual - 32) * 0.55;
+                       max = (this.temperaturaMaxima - 32) * 0.55;
+                       min = (this.temperaturaMinima - 32) * 0.55;
+                    } else if (this.escala == 'K') {
+                        atual = this.temperaturaAtual - 273.15;
+                        max = this.temperaturaMaxima - 273.15;
+                        min = this.temperaturaMinima - 273.15;
+                    }
+                    break;
+                case 'F':
+                    if(this.escala == 'C'){
+                        atual = (this.temperaturaAtual * 1.8) + 32;
+                        max = (this.temperaturaMaxima * 1.8) + 32;
+                        min = (this.temperaturaMinima * 1.8) + 32;
+                    } else if (this.escala == 'K'){
+                        atual = (this.temperaturaAtual - 273.15) * 1.8 + 32;
+                        max = (this.temperaturaMaxima - 273.15) * 1.8 + 32;
+                        min = (this.temperaturaMinima - 273.15) * 1.8 + 32;
+                    }
+                    break;
+                case 'K':
+                    if(this.escala == 'C'){
+                        atual = this.temperaturaAtual + 273.15;
+                        max = this.temperaturaMaxima + 273.15;
+                        min = this.temperaturaMinima + 273.15;
+                    }else if(this.escala == 'F'){
+                        atual = (this.temperaturaAtual - 32) * 0.55 + 273.15;
+                        max = (this.temperaturaMaxima - 32) * 0.55 + 273.15;
+                        min = (this.temperaturaMinima - 32) * 0.55 + 273.15;
+                    }
             }
+        } else {
+            return "A = " + this.temperaturaAtual + " °" + this.escala + "\nMÍN = " + this.temperaturaMinima + " °" + this.escala + "\nMÁX = " + this.temperaturaMaxima + " °" + this.escala;
         }
-        return "";
+        return "A = " + atual + " °" + escala + "\nMÍN = " + min + " °" + escala + "\nMÁX = " + max + " °" + escala;
     }
 
     /**
@@ -116,7 +153,7 @@ public class Termometro {
 
     @Override
     public String toString() {
-        return String.format("A = %1,f °%c\nMÍN = %1.f °%c\nMÁX = %1.f °%c", this.temperaturaAtual, this.escala, this.temperaturaMinima, this.escala, this.temperaturaMaxima, this.escala);
+        return String.format("A = %.1f °%c\nMÍN = %.1f °%c\nMÁX = %.1f °%c", this.temperaturaAtual, this.escala, this.temperaturaMinima, this.escala, this.temperaturaMaxima, this.escala);
     }
 }
 

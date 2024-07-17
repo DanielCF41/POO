@@ -9,7 +9,7 @@ public class TermometroTest {
     @Test
     public void testeConstrutor() {
         Termometro termometro = new Termometro('C',50, 100,0);
-        assertEquals("A = 50 °C\nMÍN = 0 °C\nMÁX = 100 °C", termometro.toString());
+        assertEquals("A = 50,0 °C\nMÍN = 0,0 °C\nMÁX = 100,0 °C", termometro.toString());
 
         assertFalse(termometro.setTemperaturaAtual(-50));
         assertFalse(termometro.setTemperaturaAtual(500));
@@ -19,11 +19,10 @@ public class TermometroTest {
     public void testeRetornaTemperatura(){
         Termometro termometro =  new Termometro('C',50, 100,0);
 
-        assertEquals("A = 122 °F\nMÍN = 32 °F\nMÁX = 212 °F",termometro.retornaTemperatura('F'));
-        assertEquals("A = 232.15 °K\nMÍN = 273.15 °F\nMÁX = 373.15 °F", termometro.retornaTemperatura('K'));
-        assertEquals("A = 50,0 °C\nMÍN = 0,0 °C\nMÁX = 100,0 °C", termometro.retornaTemperatura('C'));
+        assertEquals("A = 122.0 °F\nMÍN = 32.0 °F\nMÁX = 212.0 °F",termometro.retornaTemperatura('F'));
+        assertEquals("A = 323.15 °K\nMÍN = 273.15 °K\nMÁX = 373.15 °K", termometro.retornaTemperatura('K'));
+        assertEquals("A = 50.0 °C\nMÍN = 0.0 °C\nMÁX = 100.0 °C", termometro.retornaTemperatura('C'));
 
     }
-
 
 }
