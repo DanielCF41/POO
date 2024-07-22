@@ -26,6 +26,7 @@ class Aviao{
     -int numDeTripulantes
     -double horasDeVoo
 }
+
 Veiculo <|-- Carro
 Veiculo <|-- Caminhao
 Veiculo <|-- Barco

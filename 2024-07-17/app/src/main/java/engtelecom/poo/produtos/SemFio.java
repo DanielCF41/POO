@@ -16,6 +16,10 @@ public class SemFio extends Telefone {
      */
     private double distanciaDeOperacao;
 
+    public SemFio() {
+
+    }
+
     /**
      * Método construtor da classe SemFio
      * @param codigo parâmetro código do telefone sem fio
@@ -33,6 +37,14 @@ public class SemFio extends Telefone {
         this.frequencia = frequencia;
         this.canais = canais;
         this.distanciaDeOperacao = distanciaDeOperacao;
+    }
+
+    public double getFrequencia() {
+        return frequencia;
+    }
+
+    public void setFrequencia(double frequencia) {
+        this.frequencia = frequencia;
     }
 
     @Override

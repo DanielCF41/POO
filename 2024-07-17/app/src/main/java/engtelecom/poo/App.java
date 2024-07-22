@@ -3,6 +3,7 @@
  */
 package engtelecom.poo;
 
+import engtelecom.poo.produtos.Celular;
 import engtelecom.poo.produtos.SemFio;
 import engtelecom.poo.produtos.Telefone;
 
@@ -14,6 +15,18 @@ public class App {
         System.out.println("\n");
         SemFio telefoneDois = new SemFio(1002, "NS-152", "Moderno", "Azul",5.0,dimensoesTelefoneUm, 2.4,12,25.0);
         System.out.printf(telefoneDois.toString());
+
+        Telefone t = new Telefone();
+        SemFio sf = new SemFio();
+        Celular c = new Celular();
+
+
+        Telefone a = new Celular();
+
+        if(a instanceof Celular){
+            ((Celular) a).getSistemaOperacional();
+        }
+
 
     }
 }

@@ -28,6 +28,15 @@ public class Telefone {
      */
     private Dimensao dimensoes;
 
+    public Telefone() {
+        this.codigo = 0;
+        this.numeroDeSerie = "A-0001";
+        this.modelo = "Padrão";
+        this.cor = "Preto";
+        this.peso = 0.5;
+        this.dimensoes = new Dimensao(1,1,1);
+    }
+
     /**
      * Método construtor da classe Telefone
      * @param codigo parâmetro códgido do telefone
@@ -37,6 +46,7 @@ public class Telefone {
      * @param peso parâmetro peso do telefone
      * @param dimensoes parâmetro dimensões do telefone
      */
+
     public Telefone(int codigo, String numeroDeSerie, String modelo, String cor, double peso, Dimensao dimensoes) {
         this.codigo = codigo;
         this.numeroDeSerie = numeroDeSerie;
@@ -55,5 +65,13 @@ public class Telefone {
                 "Modelo: " + this.modelo + "\n" + "Cor: " + this.cor + "\n" + "Peso: " + this.peso + "\n"
                 + dimensoes;
 
+    }
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
     }
 }
