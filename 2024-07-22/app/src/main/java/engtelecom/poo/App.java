@@ -8,19 +8,24 @@ import java.util.ArrayList;
 
 public class App {
     public static void main(String[] args) {
-        ArrayList<Personagem> personagem = new ArrayList<>();
+//        ArrayList<Personagem> personagem = new ArrayList<>();
+//
+//        personagem.add(new Aldeao(25,1,0.8));
+//        personagem.add(new Arqueiro(35,2,1));
+//        personagem.add(new Cavaleiro(50,3,2));
+//
+////        System.out.println(personagem.get(0).atacar());
+////        System.out.println(personagem.get(1).atacar());
+////        System.out.println(personagem.get(2).atacar());
+//
+//        System.out.println(personagem.get(0).mover());
+//        System.out.println(personagem.get(1).mover());
+//        System.out.println(personagem.get(2).mover());
+// System.out.println(personagem.get(3).mover());
 
-        personagem.add(new Aldeao(25,1,0.8));
-        personagem.add(new Arqueiro(35,2,1));
-        personagem.add(new Cavaleiro(50,3,2));
-
-        System.out.println(personagem.get(0).atacar());
-        System.out.println(personagem.get(1).atacar());
-        System.out.println(personagem.get(2).atacar());
-
-        System.out.println(personagem.get(0).mover());
-        System.out.println(personagem.get(1).mover());
-        System.out.println(personagem.get(2).mover());
+        Aldeao a = new Aldeao(2,2,2);
+        Personagem  p = a;
+        System.out.println(p.mover());
 
 
     }

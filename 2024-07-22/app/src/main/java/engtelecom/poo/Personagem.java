@@ -1,6 +1,6 @@
 package engtelecom.poo;
 
-public class Personagem {
+public abstract class Personagem {
     private int vida;
     private int ataque;
     private double velocidade;
@@ -11,13 +11,5 @@ public class Personagem {
         this.velocidade = velocidade;
     }
 
-    public String atacar(){
-        return "atacando";
-    }
-
-    public String mover(){
-        return "andando";
-    }
-
-
+    public abstract String mover();
 }

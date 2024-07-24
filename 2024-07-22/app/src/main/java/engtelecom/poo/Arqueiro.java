@@ -1,17 +1,17 @@
 package engtelecom.poo;
 
-public class Arqueiro extends Personagem{
+public class Arqueiro extends Personagem implements Guerreiro{
     public Arqueiro(int vida, int ataque, double velocidade) {
         super(vida, ataque, velocidade);
     }
 
     @Override
-    public String atacar(){
-        return "Arqueiro atacando";
+    public String mover(){
+        return "Arqueiro movendo";
     }
 
     @Override
-    public String mover(){
-        return "Arqueiro movendo";
+    public String atacar() {
+        return "Arqueiro atacando";
     }
 }
